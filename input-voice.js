@@ -160,7 +160,7 @@ class InputVoice extends HTMLElement {
           if (this.recording) {
             await stop();
           }
-        }, this.getAttribute("max-length") * 1000);
+        }, (this.getAttribute("max-length") || 10) * 1000);
       }
     };
     this.recording = false;
