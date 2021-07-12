@@ -1,0 +1,21 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width">
+<title>inptu-voice tag demo</title>
+</head>
+<body>
+<h1>input-voice tag demo</h1>
+
+<script type="module" src="./input-voice.js"></script>
+<input-voice id="inputvoice" max-length=30></input-voice>
+
+<script type="module">
+inputvoice.onchange = async () => {
+  const audio = inputvoice.value;
+  console.log(audio); // blob
+  const ba = await audio.arrayBuffer();
+  console.log(ba);
+  const bin = new Uint8Array(ba);
+  console.log(bin);
+};
+</script>
+
+<div><a href=https://github.com/code4fukui/input-voice/>src on GitHub</a></div>
