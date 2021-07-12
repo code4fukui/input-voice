@@ -49,7 +49,7 @@ const download = (blob, filename) => {
 
 // export WAV from audio float data
 const getBlobWAV = () => {
-  const encodeWAV = function(samples, sampleRate) {
+  const encodeWAV = (samples, sampleRate) => {
     const buffer = new ArrayBuffer(44 + samples.length * 2)
     const view = new DataView(buffer)
     const writeString = function(view, offset, string) {
@@ -94,7 +94,7 @@ const getBlobWAV = () => {
     return samples;
   }
   const dataview = encodeWAV(mergeBuffers(audioData), audio_sample_rate);
-  const audioBlob = new Blob([ dataview ], { type: 'audio/wav' });
+  const audioBlob = new Blob([dataview], { type: 'audio/wav' });
   //console.log(dataview)
   return audioBlob;
 };
