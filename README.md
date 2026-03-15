@@ -1,5 +1,7 @@
 # input-voice
 
+> 日本語のREADMEはこちらです: [README.ja.md](README.ja.md)
+
 A custom HTML element that allows users to record audio input from their microphone and provides options to play, download, and upload the recorded audio.
 
 ## Demo
